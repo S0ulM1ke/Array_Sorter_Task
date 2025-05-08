@@ -1,3 +1,5 @@
+#include "commandlineparser.h"
+
 #include <iostream>
 
 void printHelp() {
@@ -14,6 +16,19 @@ void printHelp() {
 }
 
 int main(int argc, char* argv[]) {
-    printHelp();
+    std::vector<std::string> args(argv + 1, argv + argc);
+    Options opts = parseArguments(args);
+
+    if (!opts.valid) {
+        std::cerr << "Error: " << opts.errorMessage << "\n\n";
+        printHelp();
+        return 1;
+    }
+
+    if (opts.help) {
+        std::cout << "Help requested.\n\n";
+        printHelp();
+        return 0;
+    }
     return 0;
 }

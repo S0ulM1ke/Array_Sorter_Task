@@ -1,0 +1,14 @@
+Help requested.
+
+Usage:
+  ArraySorterTask -target <path_to_file> [options]
+
+Options:
+  -target <file> (required)     Path to input text file to be sorted
+  If no options are provided, all operations will be performed.
+
+  -print                        Print input arrays
+  -sort                         Print sorted arrays
+  -intersect                    Print intersection of arrays
+  -unique-rev                   Print unique elements in reverse order
+  -help                         Show this help message
