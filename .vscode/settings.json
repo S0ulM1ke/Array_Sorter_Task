@@ -1,0 +1,5 @@
+{
+    "cmake.useCMakePresets": "never",
+    "cmake.enabled": false   
+}
+  

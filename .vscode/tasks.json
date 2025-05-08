@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Configure (CMake)",
+        "type": "shell",
+        "command": "cmake -B build -G Ninja -S .",
+        "problemMatcher": []
+      },
+      {
+        "label": "Build (ninja)",
+        "type": "shell",
+        "command": "ninja -C build",
+        "dependsOn": ["Configure (CMake)"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Run",
+        "type": "shell",
+        "command": "./build/ArraySorterTask.exe",
+        "presentation": {
+          "reveal": "always"
+        }
+      }
+    ]
+  }
+  
