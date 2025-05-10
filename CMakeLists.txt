@@ -22,6 +22,7 @@ set(PROJECT_SOURCES
     "${CMAKE_SOURCE_DIR}/src/main.cpp"
     "${CMAKE_SOURCE_DIR}/src/commandlineparser.h"
     "${CMAKE_SOURCE_DIR}/src/commandlineparser.cpp"
+    "${CMAKE_SOURCE_DIR}/src/arraybase.h"
     #src/ArraySorter.cpp
 )
 

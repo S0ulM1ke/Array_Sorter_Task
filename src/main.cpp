@@ -1,4 +1,6 @@
 #include "commandlineparser.h"
+#include "fileparser.h"
+#include "arraybase.h"
 
 #include <iostream>
 
@@ -30,5 +32,24 @@ int main(int argc, char* argv[]) {
         printHelp();
         return 0;
     }
+
+    // Read integers from the specified file
+    auto numbers = FileParser::readIntegersFromFile(opts.targetFile);
+    if (numbers.empty()) {
+        std::cerr << "Error: No valid data found in the file.\n";
+        return 1;
+    }
+
+    PlainArray<int> array(numbers);
+    array.print(); // Print the original arrays
+    
+
+//     for (const auto& line : numbers) {
+//         for (const auto& num : line) {
+//             std::cout << num << " ";
+//         }
+//         std::cout << "\n";
+//     }
+
     return 0;
 }

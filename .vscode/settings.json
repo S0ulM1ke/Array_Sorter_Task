@@ -1,5 +1,9 @@
 {
     "cmake.useCMakePresets": "never",
-    "cmake.enabled": false   
+    "cmake.enabled": false,
+    "files.associations": {
+        "vector": "cpp",
+        "algorithm": "cpp"
+    }
 }
   
