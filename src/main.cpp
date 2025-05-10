@@ -1,6 +1,9 @@
 #include "commandlineparser.h"
 #include "fileparser.h"
-#include "arraybase.h"
+#include "arraytransformer.h"
+#include "sortedarray.h"
+#include "intersectarray.h"
+#include "uniquerevarray.h"
 
 #include <iostream>
 
@@ -40,16 +43,32 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    PlainArray<int> array(numbers);
-    array.print(); // Print the original arrays
-    
+    if (opts.print) {
+        // Print the original arrays
+        PlainArray<int> array(numbers);
+        array.print();
+    }
 
-//     for (const auto& line : numbers) {
-//         for (const auto& num : line) {
-//             std::cout << num << " ";
-//         }
-//         std::cout << "\n";
-//     }
+    if (opts.sort) {
+        // Sort the arrays and print them
+        SortedArray<int> sortedArray(numbers);
+        sortedArray.transform();
+        sortedArray.print();
+    }
+
+    if (opts.intersect) {
+        // Find the intersection of the arrays and print it
+        IntersectArray<int> intersectArray(numbers);
+        intersectArray.transform();
+        intersectArray.print();
+    }
+
+    if (opts.uniqueReverse) {
+        // Find unique elements in reverse order and print them
+        UniqueReverseArray<int> uniqueRevArray(numbers);
+        uniqueRevArray.transform();
+        uniqueRevArray.print();
+    }
 
     return 0;
 }

@@ -31,6 +31,14 @@
         }
       },
       {
+        "label": "Run tests",
+        "type": "shell",
+        "command": "./tests/test_args.bat",
+        "presentation": {
+          "reveal": "always"
+        }
+      },
+      {
         "label": "Print test",
         "type": "shell",
         "command": "./tests/test_print.bat",
