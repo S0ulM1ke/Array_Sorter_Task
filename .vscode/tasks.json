@@ -31,7 +31,7 @@
         }
       },
       {
-        "label": "Run tests",
+        "label": "Run arguments tests",
         "type": "shell",
         "command": "./tests/test_args.bat",
         "presentation": {
@@ -39,9 +39,9 @@
         }
       },
       {
-        "label": "Print test",
+        "label": "General test",
         "type": "shell",
-        "command": "./tests/test_print.bat",
+        "command": "./tests/test_general.bat",
         "presentation": {
           "reveal": "always"
         }

@@ -36,7 +36,14 @@ Options parseArguments(const std::vector<std::string> &args)
     if (!opts.help && opts.targetFile.empty()) {
         opts.valid = false;
         opts.errorMessage = "Missing required argument: -target <file>";
-    }
+    }else if (!opts.help &&
+        !opts.sort && !opts.intersect && !opts.uniqueReverse && !opts.print) {
+            // Enable all modes by default if none specified
+            opts.sort = true;
+            opts.intersect = true;
+            opts.uniqueReverse = true;
+            opts.print = true;
+        }
 
     return opts;
 }

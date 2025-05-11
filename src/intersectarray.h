@@ -47,6 +47,8 @@ private:
             for (const T& val : _intersectionOfAllArrays) {
                 out << val << " ";
             }
+
+            out << "\n";
         } else {
             out << "No intersection found between all arrays.\n";
         }

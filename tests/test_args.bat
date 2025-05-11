@@ -60,11 +60,23 @@ if !ERRORLEVEL! NEQ 0 (
     goto Error
 )
 
+fc /b "%TEST_OUTPUT%\test_print.txt" "%EXPECTED_OUTPUT%\expected_print.txt" >nul
+if !ERRORLEVEL! NEQ 0 (
+    echo Print output does not match expected.
+    goto Error
+)
+
 echo Testing -sort argument
 %TARGET_EXECUTABLE% -target %INPUT_FILE%  -sort > %TEST_OUTPUT%\test_sort.txt
 if !ERRORLEVEL! NEQ 0 (
     echo Failed to run %TARGET_EXECUTABLE% with -sort argument.
     popd
+    goto Error
+)
+
+fc /b "%TEST_OUTPUT%\test_sort.txt" "%EXPECTED_OUTPUT%\expected_sort.txt" >nul
+if !ERRORLEVEL! NEQ 0 (
+    echo Sort output does not match expected.
     goto Error
 )
 
@@ -76,11 +88,23 @@ if !ERRORLEVEL! NEQ 0 (
     goto Error
 )
 
+fc /b "%TEST_OUTPUT%\test_intersect.txt" "%EXPECTED_OUTPUT%\expected_intersect.txt" >nul
+if !ERRORLEVEL! NEQ 0 (
+    echo Intersect output does not match expected.
+    goto Error
+)
+
 echo Testing -unique-rev argument
 %TARGET_EXECUTABLE% -target %INPUT_FILE%  -unique-rev > %TEST_OUTPUT%\test_unique_rev.txt
 if !ERRORLEVEL! NEQ 0 (
     echo Failed to run %TARGET_EXECUTABLE% with -unique-rev argument.
     popd
+    goto Error
+)
+
+fc /b "%TEST_OUTPUT%\test_unique_rev.txt" "%EXPECTED_OUTPUT%\expected_unique_rev.txt" >nul
+if !ERRORLEVEL! NEQ 0 (
+    echo Unique-rev output does not match expected.
     goto Error
 )
 
