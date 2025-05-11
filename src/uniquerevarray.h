@@ -49,7 +49,7 @@ public:
         Sort::quickSort(uniqueElements, 0, uniqueElements.size() - 1);
         std::reverse(uniqueElements.begin(), uniqueElements.end());
 
-        _uniqueElementsInReverseOrder.insert(_uniqueElementsInReverseOrder.end(), uniqueElements.begin(), uniqueElements.end());
+        uniqueElementsInReverseOrder_.insert(uniqueElementsInReverseOrder_.end(), uniqueElements.begin(), uniqueElements.end());
     }
 
 private:
@@ -59,15 +59,15 @@ private:
      * @param out The output stream to print to.
      */
     void printArrays(std::ostream& out) const override {
-        if (_uniqueElementsInReverseOrder.empty()) {
+        if (uniqueElementsInReverseOrder_.empty()) {
             out << "No unique elements found.\n";
             return;
         }
 
-        for (const T& val : _uniqueElementsInReverseOrder) {
+        for (const T& val : uniqueElementsInReverseOrder_) {
             out << val << " ";
         }
     }
 
-    std::vector<T> _uniqueElementsInReverseOrder;
+    std::vector<T> uniqueElementsInReverseOrder_;
 };

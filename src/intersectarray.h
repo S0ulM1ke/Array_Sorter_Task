@@ -36,9 +36,9 @@ public:
         std::pair<std::vector<T>, std::vector<T>> longest = findTwoLongest(this->arrays_);
         const std::vector<T>& first = longest.first;
         const std::vector<T>& second = longest.second;
-        _intersectionOfLongestArrays = intersectArrays({first, second});
+        intersectionOfLongestArrays_ = intersectArrays({first, second});
 
-        _intersectionOfAllArrays = intersectArrays(this->arrays_);
+        intersectionOfAllArrays_ = intersectArrays(this->arrays_);
     }
 
 private:
@@ -48,14 +48,14 @@ private:
      * @param out The output stream to print to.
      */
     void printArrays(std::ostream& out) const override {
-        if (_intersectionOfLongestArrays.empty() && _intersectionOfAllArrays.empty()) {
+        if (intersectionOfLongestArrays_.empty() && intersectionOfAllArrays_.empty()) {
             out << "No intersection found.\n";
             return;
         }
 
-        if (!_intersectionOfLongestArrays.empty()) {
+        if (!intersectionOfLongestArrays_.empty()) {
             out << "Intersection of Longest Arrays:\n";
-            for (const T& val : _intersectionOfLongestArrays) {
+            for (const T& val : intersectionOfLongestArrays_) {
                 out << val << " ";
             }
         }  else {
@@ -64,9 +64,9 @@ private:
 
         out << "\n\n";
 
-        if (!_intersectionOfAllArrays.empty()) {
+        if (!intersectionOfAllArrays_.empty()) {
             out << "Intersection of All Arrays:\n";
-            for (const T& val : _intersectionOfAllArrays) {
+            for (const T& val : intersectionOfAllArrays_) {
                 out << val << " ";
             }
 
@@ -129,6 +129,6 @@ private:
         return result;
     }
 
-    std::vector<T> _intersectionOfLongestArrays;
-    std::vector<T> _intersectionOfAllArrays;
+    std::vector<T> intersectionOfLongestArrays_;
+    std::vector<T> intersectionOfAllArrays_;
 };
