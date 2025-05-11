@@ -1,3 +1,8 @@
+/**
+ * @file uniquearray.h
+ * @brief Header file for the UniqueReverseArray class.
+ */
+
 #pragma once
 
 #include "arraytransformer.h"
@@ -5,6 +10,12 @@
 
 #include <unordered_set>
 
+/**
+ * @brief Class to find unique elements in reverse order.
+ * This file defines the UniqueReverseArray class,
+ * which is responsible for finding unique elements in reverse order.
+ * It inherits from the ArrayTransformer class
+ */
 template<typename T>
 class UniqueReverseArray : public ArrayTransformer<T>
 {
@@ -16,6 +27,10 @@ public:
             return "=======Unique Elements in Reverse Order=======\n";
     }
 
+    /**
+     * Transforms the input arrays to find unique elements in reverse order.
+     * This method finds unique elements across all arrays and sorts them in reverse order.
+     */
     void transform() override {
         std::unordered_map<T, int> countMap;
 
@@ -38,6 +53,11 @@ public:
     }
 
 private:
+    /**
+     * Prints the unique elements in reverse order to the output stream.
+     * 
+     * @param out The output stream to print to.
+     */
     void printArrays(std::ostream& out) const override {
         if (_uniqueElementsInReverseOrder.empty()) {
             out << "No unique elements found.\n";

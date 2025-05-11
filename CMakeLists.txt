@@ -3,12 +3,15 @@ cmake_minimum_required(VERSION 3.20)
 # Project name
 project(ArraySorterTask VERSION 0.1.0
         DESCRIPTION "Array sorting test task"
+        HOMEPAGE_URL "https://github.com/S0ulM1ke"
         LANGUAGES CXX)
 
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libgcc -static-libstdc++")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static")
 
 set(PROJECT_LICENSE "GPL-3.0-only")
 

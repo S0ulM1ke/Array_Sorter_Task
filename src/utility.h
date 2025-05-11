@@ -58,7 +58,14 @@ namespace FileParser {
 } // namespace FileParser
 
 namespace Sort {
-    // Function to perform quicksort on a vector of integers
+    /**
+     * @brief Partition function for QuickSort algorithm.
+     * @param arr The vector to be partitioned.
+     * @param low The starting index of the vector.
+     * @param high The ending index of the vector.
+     * @tparam T The type of elements in the vector.
+     * @return The index of the pivot element after partitioning.
+     */
     template<typename T>
     int partition(std::vector<T>& arr, int low, int high) {
         T pivot = arr[high];
@@ -75,6 +82,13 @@ namespace Sort {
         return i + 1;
     }
 
+    /**
+     * @brief QuickSort algorithm to sort a vector of integers.
+     * @param arr The vector to be sorted.
+     * @param low The starting index of the vector.
+     * @param high The ending index of the vector.
+     * @tparam T The type of elements in the vector.
+     */
     template<typename T>
     void quickSort(std::vector<T>& arr, int low, int high) {
         if (low < high) {

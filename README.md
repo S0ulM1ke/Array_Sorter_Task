@@ -43,15 +43,15 @@ When steps done you'll be ready to use application `ArraySorterTask.exe` located
 
 ## Features
 
-* This application is capable of reading text files that contain multiple numeric       arrays delimed by whitespaces and comas
+* This application can read text files containing multiple numeric arrays, where arrays are delimited by whitespaces or commas
 
 * Prints input arrays
 
-* Sorting arrays by `quick sort`.
+* Sorts arrays using the Quick Sort algorithm.
 
-* Finding intersections between two longest arrays and between all input arrays
+* Finds intersections between the two longest arrays and among all input arrays
 
-* Finding unique elements in input arrays and place them in reverse order
+* Identifies unique elements in the input arrays and outputs them in reverse order
 
 ### Command line arguments
 
@@ -72,7 +72,7 @@ When steps done you'll be ready to use application `ArraySorterTask.exe` located
 ```
 ArraySorterTask.exe -target input_arrays.txt
 ```
-* Target file that needs to be proceeded
+* Target file that needs to be processed
 
 #### Print
 ```
@@ -90,20 +90,20 @@ ArraySorterTask.exe -target input_arrays.txt
 ```
 -intersect
 ```
-* Finding intersection between two longest arrays and between all input arrays
+* Finds intersections between the two longest arrays and among all input arrays
 
 #### Unique-reverse
 ```
 -unique-rev
 ```
-* Finding unique elements in all input arrays and reverse it
+* Finding unique elements in all input arrays and outputs them in reverse order
 
 > [!NOTE]
-> If `-target <file>` is specified only, all operations below would be executed
+> If only `-target <file>` is specified, all operations (print, sort, intersect, unique-reverse) will be executed sequentially.
 
 ## Tests
 
-In `tests` folder you can find different kind of scripts that executes application within the different argument options. After test completes you can find `output` folder to inspect application output.
+The `tests` folder contains scripts that execute the application with various argument options. After running a test, check the `output` folder to review the application's output.
 
 > [!IMPORTANT]
 > To perform tests, you need to build application first. Also tests depends on `input.txt` to match `expected_output` files.

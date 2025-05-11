@@ -1,5 +1,15 @@
+/**
+ * @file commandlineparser.cpp
+ * @brief Implementation of command line argument parsing.
+ */
 #include "commandlineparser.h"
 
+/**
+ * @brief Parses command line arguments and returns an Options struct.
+ * 
+ * @param args The command line arguments as a vector of strings.
+ * @return An Options struct containing the parsed options.
+ */
 Options parseArguments(const std::vector<std::string> &args)
 {
     Options opts;

@@ -1,8 +1,19 @@
+/**
+ * @file sotedarray.h
+ * @brief Header file for the SortedArray class.
+ */
+
 #pragma once
 
 #include "arraytransformer.h"
 #include "utility.h"
 
+/**
+ * @brief Class to sort multiple arrays.
+ * This file defines the SortedArray class,
+ * which is responsible for sorting multiple arrays.
+ * It inherits from the ArrayTransformer class
+ */
 template<typename T>
 class SortedArray : public ArrayTransformer<T>
 {

@@ -1,9 +1,21 @@
+/**
+ * @file intersectarray.h
+ * @brief Header file for the IntersectArray class.
+*/
+
 #pragma once
 
 #include "arraytransformer.h"
 
 #include <unordered_map>
 
+/**
+ * @brief Class to find the intersection of multiple arrays.
+ * This file defines the IntersectArray class,
+ * which is responsible for finding
+ * the intersection of multiple arrays.
+ * It inherits from the ArrayTransformer class
+ */
 template<typename T>
 class IntersectArray : public ArrayTransformer<T>
 {
@@ -15,6 +27,11 @@ public:
         return "=======Intersection of Arrays=======\n";
     }
 
+    /**
+     * Transforms the input arrays to find the intersection.
+     * This method finds the intersection of the two longest arrays
+     * and the intersection of all arrays.
+     */
     void transform() override {
         std::pair<std::vector<T>, std::vector<T>> longest = findTwoLongest(this->arrays_);
         const std::vector<T>& first = longest.first;
@@ -25,6 +42,11 @@ public:
     }
 
 private:
+    /**
+     * Prints the intersection arrays to the output stream.
+     * 
+     * @param out The output stream to print to.
+     */
     void printArrays(std::ostream& out) const override {
         if (_intersectionOfLongestArrays.empty() && _intersectionOfAllArrays.empty()) {
             out << "No intersection found.\n";
@@ -54,6 +76,13 @@ private:
         }
     }
 
+    /**
+     * Finds the two longest arrays from the given list of arrays.
+     * 
+     * @param arrays A vector of vectors containing the arrays to evaluate.
+     * @return A pair of vectors representing the two longest arrays.
+     * @throws std::runtime_error if the input contains fewer than two arrays.
+     */
     std::pair<std::vector<T>, std::vector<T>> findTwoLongest(const std::vector<std::vector<T>>& arrays) {
         if (arrays.size() < 2)
             throw std::runtime_error("Need at least two arrays");
@@ -70,6 +99,12 @@ private:
         return {first, second};
     }
 
+    /**
+     * Finds the intersection of multiple arrays.
+     * 
+     * @param arrays A vector of vectors containing the arrays to evaluate.
+     * @return A vector containing the elements that are present in all arrays.
+     */
     std::vector<T> intersectArrays(const std::vector<std::vector<T>>& arrays) {
         if (arrays.empty()) return {};
 
