@@ -1,5 +1,5 @@
 #include "commandlineparser.h"
-#include "fileparser.h"
+#include "utility.h"
 #include "arraytransformer.h"
 #include "sortedarray.h"
 #include "intersectarray.h"

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "arraytransformer.h"
-#include "sort.h"
+#include "utility.h"
 
 template<typename T>
 class SortedArray : public ArrayTransformer<T>
